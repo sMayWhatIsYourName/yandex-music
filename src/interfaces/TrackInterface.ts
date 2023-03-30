@@ -1,0 +1,32 @@
+import TrackMajorInterface from '@/interfaces/TrackMajorInterface';
+import R128 from '@/interfaces/R128Interface';
+import ArtistInterface from '@/interfaces/TrackArtistInterface';
+import AlbumInterface from '@/interfaces/AlbumInterface';
+import LyricsInfoInterface from '@/interfaces/LyricsInfoInterface';
+
+export default interface TrackInterface {
+    id: string;
+    realId: string;
+    title: string;
+    trackSource: string;
+    major: TrackMajorInterface;
+    available: boolean;
+    availableForPremiumUsers: boolean;
+    availableFullWithoutPermission: boolean;
+    durationMs: number;
+    storageDir: string;
+    fileSize: number;
+    r128: R128;
+    previewDurationMs: number;
+    artists: Array<ArtistInterface>;
+    albums: Array<AlbumInterface>;
+    coverUri: string;
+    ogImage: string;
+    lyricsAvailable: boolean;
+    lyricsInfo: LyricsInfoInterface;
+    best?: boolean;
+    type: string;
+    rememberPosition: boolean;
+    trackSharingFlag: string;
+    liked?: boolean;
+};
