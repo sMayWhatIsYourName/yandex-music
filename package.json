@@ -1,10 +1,9 @@
 {
   "name": "Yandex.Music",
-  "author": "Alexander Lisenkov",
+  "author": "Albert Kanchurin",
   "description": "Unofficial Yandex.Music app written in electron.",
   "version": "0.1.0",
-  "repository": "https://github.com/Fidden/yandex-music-electron",
-  "license": "MIT",
+  "repository": "https://github.com/sMayWhatIsYourName2020/yandex-music",
   "private": true,
   "scripts": {
     "lint": "vue-cli-service lint",

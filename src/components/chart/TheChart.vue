@@ -33,7 +33,7 @@ import { useChartStore } from '@/store/chart';
 import ChartTrack from '@/components/chart/ChartTrack.vue';
 import { Entity } from '@/interfaces/LandingBlocksInterface';
 
-const chartStore = useChartStore();
+const chartStore = useChartStore(); // Получаем чарт из хранилища
 const chart: Ref<Array<Entity>> = ref([]);
 
 onMounted(async () => {

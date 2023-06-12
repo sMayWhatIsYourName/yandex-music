@@ -20,10 +20,10 @@ import { ref } from 'vue';
 import { useMainStore } from '@/store';
 import { AppStateEnum } from '@/enums/AppStateEnum';
 
-const store = useMainStore();
-const token = ref('');
+const store = useMainStore(); // Получаем данные из хранилища
+const token = ref(''); // Создаем хранилище для токена
 
-function handleClick() {
+function handleClick() { // При нажатии сохраняем токен в локальное хранилище
     localStorage.setItem('token', token.value);
     store.setAppState(AppStateEnum.LOADING);
 }

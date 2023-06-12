@@ -88,7 +88,7 @@ const request = useRequest();
 const album: Ref<AlbumWithTracksInterface> = ref({} as AlbumWithTracksInterface);
 
 onMounted(async () => {
-    const res = await request.get(`/albums/${route.params.id}/with-tracks`);
+    const res = await request.get(`/albums/${route.params.id}/with-tracks`); // Запрашиваем альбом с песнями
     album.value = res.data.result;
 });
 

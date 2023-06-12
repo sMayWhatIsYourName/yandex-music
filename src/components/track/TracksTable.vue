@@ -142,10 +142,6 @@ const filterFunc = reactive([
 
 const filteredTracks: Ref<Array<TrackInterface>> = ref([]);
 
-// todo: оптимизируй меня !!!!
-// note: при переборе через цикл он замыкается, разберись с этим
-// note2: узнай есть ли более легкий и оптимизированный способ проставить лайки
-// ибо каждый раз проходить по массиву и искать в другом массиве вхождения не самая лучшая твоя идея
 onMounted(() => {
     filteredTracks.value = props.tracks
         .filter(item => item.available)

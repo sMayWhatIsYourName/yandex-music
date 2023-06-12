@@ -26,7 +26,7 @@ const userStore = useUserStore();
 const artists: Ref<Array<ArtistInterface>> = ref([]);
 
 onMounted(async () => {
-    const res = await useRequest().get(`/users/${userStore.userId}/likes/artists`);
+    const res = await useRequest().get(`/users/${userStore.userId}/likes/artists`); // Получаем список избранных артистов
     artists.value = res.data.result;
 });
 </script>

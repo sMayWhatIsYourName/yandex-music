@@ -46,7 +46,7 @@ import AlbumCard from '@/components/album/AlbumCard.vue';
 import ArtistCard from '@/components/artist/ArtistCard.vue';
 import PlaylistCardLanding from '@/components/playlist/PlaylistCardLanding.vue';
 
-const recentStore = useRecentStore();
+const recentStore = useRecentStore(); // Берем из хранилища последнее прослушенное
 const recent: Ref<Array<Entity>> = ref([]);
 
 onMounted(async () => {

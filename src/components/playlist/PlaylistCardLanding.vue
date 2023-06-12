@@ -37,10 +37,12 @@ import { defineProps } from 'vue';
 import { Data, Payload } from '@/interfaces/LandingBlocksInterface';
 import BaseImage from '@/components/ui/BaseImage.vue';
 
-defineProps<{
+const props = defineProps<{
     playlist: Data | Payload;
     showTracksCount?: boolean;
 }>();
+
+// console.log(props.playlist);
 
 </script>
 

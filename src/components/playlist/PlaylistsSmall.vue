@@ -21,7 +21,7 @@ import { computed } from 'vue';
 import { usePlaylistStore } from '@/store/playlist';
 import PlaylistCardSmall from '@/components/playlist/PlaylistSmallCard.vue';
 
-const playlistStore = usePlaylistStore();
+const playlistStore = usePlaylistStore(); // Берем плейлисты из списка личных плейлистов
 const playlists = computed(() => playlistStore.all);
 </script>
 

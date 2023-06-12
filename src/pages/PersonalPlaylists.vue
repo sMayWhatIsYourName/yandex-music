@@ -32,7 +32,7 @@ import useFlickityDefaultOptions from '@/composables/useFlickityDefaultOptions';
 import { usePlaylistStore } from '@/store/playlist';
 import PersonalPlaylistCard from '@/components/playlist/PlaylistPersonalCard.vue';
 
-const playlistStore = usePlaylistStore();
+const playlistStore = usePlaylistStore(); // Берем подборки от Яндекс Музыки из списка плейлистов
 
 const playlists = computed(() => playlistStore.personal);
 </script>

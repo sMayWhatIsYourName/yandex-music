@@ -43,6 +43,8 @@ import AlbumCard from '@/components/album/AlbumCard.vue';
 const playlistStore = usePlaylistStore();
 
 const playlists = computed(() => playlistStore.hits);
+console.log(playlists.value, 'hiits');
+
 </script>
 
 <style scoped>

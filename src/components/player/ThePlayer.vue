@@ -314,8 +314,6 @@ async function like() {
     }
 }
 
-// todo: переделать на audio.value.loop
-//  https://stackoverflow.com/questions/20522929/how-to-repeat-html5-audio
 function handleRepeat() {
     if (playerStore.repeat > 0) {
         if (playerStore.repeat === 1) {

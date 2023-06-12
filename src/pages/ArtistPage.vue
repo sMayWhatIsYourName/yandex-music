@@ -173,7 +173,7 @@ const route = useRoute();
 
 const artist: Ref<ArtistBriefInterface> = ref({} as ArtistBriefInterface);
 
-const albums = computed(() => [...artist.value.albums]
+const albums = computed(() => [...artist.value.albums] // Сортировка альбомов по дате релиза по убыванию
     .sort((a, b) => {
         if (Date.parse(a.releaseDate) > Date.parse(b.releaseDate)) {
             return -1;
@@ -184,13 +184,12 @@ const albums = computed(() => [...artist.value.albums]
         return 0;
     }));
 
-onMounted(async () => {
+onMounted(async () => { // При первой загрузки компонента сохраняем инфу об артисте
     artist.value = await getArtistBriefInfo(Number(route.params.id));
     artist.value.artist.liked = userStore.likes.artists.findIndex(item => item.id === artist.value.artist.id) !== -1;
 });
 
 watch(route, async (value) => {
-    // todo: подумать над красивым решением проблемы
     if (value.params.id) {
         artist.value = {} as ArtistBriefInterface;
         await nextTick();
@@ -198,12 +197,12 @@ watch(route, async (value) => {
     }
 });
 
-async function getArtistBriefInfo(id: number): Promise<ArtistBriefInterface> {
+async function getArtistBriefInfo(id: number): Promise<ArtistBriefInterface> { // Получение информации об артисте
     const res = await request.get(`/artists/${id}/brief-info`);
     return res.data.result;
 }
 
-async function handleLike() {
+async function handleLike() { // Добавление артиста в избранное
     artist.value.artist.liked = await useLikeAction(
         LikesObjectTypesEnum.ARTIST,
         `${artist.value.artist.id}`,
@@ -215,7 +214,7 @@ async function handleLike() {
         : userStore.removeLikesArtists(artist.value.artist as ArtistLikeInterface);
 }
 
-function handleShare() {
+function handleShare() { // Копирование ссылки на артиста
     navigator.clipboard.writeText(`https://music.yandex.ru/artist/${artist.value.artist.id}`);
     notificationStore.pushNotification('Ссылка скопирована');
 }

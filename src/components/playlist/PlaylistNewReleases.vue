@@ -40,6 +40,8 @@ import PlaylistCardLanding from '@/components/playlist/PlaylistCardLanding.vue';
 
 const releaseStore = useReleaseStore();
 const newReleases = computed(() => releaseStore.releases);
+// console.log(newReleases.value);
+console.info(newReleases.value, '     !new reseleases');
 </script>
 
 <style scoped>
