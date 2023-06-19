@@ -14,6 +14,7 @@ import PlaylistsPage from '@/pages/PlaylistsPage.vue';
 import HitsPage from '@/pages/HitsPage.vue';
 import ChartPage from '@/pages/ChartPage.vue';
 import SearchPage from '@/pages/SearchPage.vue';
+import LoginPage from '@/pages/LoginPage.vue';
 
 const routes: Array<RouteRecordRaw> = [
     {
